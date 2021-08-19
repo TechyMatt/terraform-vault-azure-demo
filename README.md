@@ -5,7 +5,9 @@ This code example integrates with HashiCorp Vault to generate an ephemeral Azure
 ## Reference Links
 
 [Using HashiCorp Vault to generate ephemeral Azure AD Service Principles](https://mattinthecloud.medium.com/using-hashicorp-vault-to-generate-ephemeral-azure-ad-service-principles-8354955b6b29)
+
 [Azure Secrets Engine](https://learn.hashicorp.com/tutorials/vault/azure-secrets)
+
 [Active Directory Secrets Engine](https://www.vaultproject.io/docs/secrets/ad)
 
 ## Required Environment Variables
