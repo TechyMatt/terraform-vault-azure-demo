@@ -24,7 +24,7 @@ VAULT_TOKEN | Defines the Vault authentication token for the role assignment in 
 
 Vault Role to grant Contributor to the ephemeral Azure AD to an Azure subscription - replace subscription_guid with value
 
-```hcl 
+```json 
 vault write azure/roles/sub-contributor ttl=60m azure_roles=-<<EOF
     [
       {
@@ -37,7 +37,7 @@ EOF
 
 Vault Role to grant access to the newly created root management group so that future runs of Terraform can perform actions on management group -- replace ParentManagementGroup with the parent management group
 
-```hcl
+```jason
 vault write azure/roles/lz-permission ttl=60m azure_roles=-<<EOF
     [
       {
