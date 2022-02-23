@@ -8,19 +8,21 @@ terraform {
 
     vault = {
       source = "hashicorp/vault"
-      version = "2.20.0"
+      version = "3.3.0"
     }
   }
 }
 
-provider "vault" {}
+provider "vault" {
+  
+}
 
 data "vault_azure_access_credentials" "creds" {
   backend = "azure"
-  role    = "sub-contributor"
+  role    = "edu-app"
   validate_creds = true
-  num_sequential_successes = 2
-  num_seconds_between_tests = 20
+  num_sequential_successes = 20
+  num_seconds_between_tests = 30
   max_cred_validation_seconds = 1200 // 20 minutes
 }
 
@@ -28,6 +30,8 @@ provider "azurerm" {
   features {}
   client_id = data.vault_azure_access_credentials.creds.client_id
   client_secret = data.vault_azure_access_credentials.creds.client_secret
+  subscription_id = "171a7c9d-0a7f-468a-b006-7075e2f25f74" 
+  tenant_id = "9bdc7fd9-30ec-41bd-8238-7e5f2d6bbea4"
 }
 
 # Create a resource group
